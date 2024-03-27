@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e2rh2muir1f6"
+path="res://.godot/imported/Spoopy Hybrid.mp3-99626e6d89bf6ffba0cde687ac09864a.mp3str"
+
+[deps]
+
+source_file="res://Music/Spoopy Hybrid.mp3"
+dest_files=["res://.godot/imported/Spoopy Hybrid.mp3-99626e6d89bf6ffba0cde687ac09864a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

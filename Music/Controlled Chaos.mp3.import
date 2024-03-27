@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4yy4qw13hwcp"
+path="res://.godot/imported/Controlled Chaos.mp3-27645b44c14515e08dcf1de5afbcc41e.mp3str"
+
+[deps]
+
+source_file="res://Music/Controlled Chaos.mp3"
+dest_files=["res://.godot/imported/Controlled Chaos.mp3-27645b44c14515e08dcf1de5afbcc41e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
