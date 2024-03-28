@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://7v5gx2vyxdes"]
+
+[ext_resource type="Texture2D" uid="uid://bfvefjcmm3px4" path="res://Sprites/mainguy-Sheet.png" id="1_2v8d5"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_q885l"]
+[ext_resource type="Texture2D" uid="uid://b6di7e6ioth5d" path="res://Sprites/playerweapon1.png" id="3_8fg1f"]
+[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="3_typn8"]
+[ext_resource type="Script" path="res://Scenes/gun sprite.gd" id="4_ditx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs7ui"]
+size = Vector2(40, 53)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8an1c"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_q885l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 16.5)
+shape = SubResource("RectangleShape2D_rs7ui")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 16)
+scale = Vector2(2.8125, 1.84375)
+texture = ExtResource("1_2v8d5")
+hframes = 3
+
+[node name="gun sprite" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(3.78125, 4.0625)
+texture = ExtResource("3_8fg1f")
+offset = Vector2(12.4298, 0.246154)
+script = ExtResource("4_ditx4")
+
+[node name="RayCast2D" type="RayCast2D" parent="gun sprite"]
+position = Vector2(-0.264461, 0.246154)
+target_position = Vector2(10000, 0)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="gun sprite"]
+mesh = SubResource("PlaneMesh_8an1c")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(11, 14)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("3_typn8")
