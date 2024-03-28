@@ -35,10 +35,12 @@ script = ExtResource("4_ditx4")
 position = Vector2(-0.264461, 0.246154)
 target_position = Vector2(10000, 0)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="gun sprite"]
+[node name="muzzle" type="MeshInstance2D" parent="gun sprite"]
 mesh = SubResource("PlaneMesh_8an1c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(11, 14)
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 script = ExtResource("3_typn8")
