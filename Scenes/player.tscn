@@ -5,11 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b6di7e6ioth5d" path="res://Sprites/playerweapon1.png" id="3_8fg1f"]
 [ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="3_typn8"]
 [ext_resource type="Script" path="res://Scenes/gun sprite.gd" id="4_ditx4"]
+[ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="6_wlchm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs7ui"]
 size = Vector2(40, 53)
-
-[sub_resource type="QuadMesh" id="QuadMesh_md84y"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_q885l")
@@ -31,14 +30,10 @@ texture = ExtResource("3_8fg1f")
 offset = Vector2(12.4298, 0.246154)
 script = ExtResource("4_ditx4")
 
-[node name="RayCast2D" type="RayCast2D" parent="gun sprite"]
-position = Vector2(-1.05785, -0.246154)
-target_position = Vector2(10000, 0)
-
-[node name="muzzle" type="MeshInstance2D" parent="gun sprite"]
-position = Vector2(26.4463, -0.246154)
-scale = Vector2(1.42562, 1)
-mesh = SubResource("QuadMesh_md84y")
+[node name="Marker2D" type="Marker2D" parent="gun sprite"]
+position = Vector2(26.6139, -0.492308)
+scale = Vector2(0.633665, 0.492308)
+script = ExtResource("6_wlchm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(11, 14)

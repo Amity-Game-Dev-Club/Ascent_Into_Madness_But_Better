@@ -12,14 +12,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta: float) -> void:
-
-	if aimcast.is_colliding():
-		if Input.is_action_pressed("mouseL"):
-			var b = bullet.instantiate()
-			muzzle.add_child(b)
-			#b.look_at(aimcast.get_collision_point())
-			b.position = position
-			b.direction =(aimcast.target_position)
 	var direction = Input.get_axis("left", "right")
 	if not is_on_floor():
 		velocity.y += gravity * delta
