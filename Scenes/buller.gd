@@ -1,19 +1,21 @@
-extends Sprite2D
-var shoot = false
-const Damage = 25
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	set_as_top_level(true)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+extends CharacterBody2D
+class_name Bullet
+var speed = 500
+var move_direction: Vector2 = Vector2.ZERO
+var damage
+
 func _process(delta):
-	if shoot:
-		pass
+	global_position += move_direction * delta * speed
+
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
+
+
+
 
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("enemy"):
-		body.health = body.health-Damage
-		queue_free()
-	elif body.is_in_group("floor"):
-		queue_free()
+	pass # Replace with function body.

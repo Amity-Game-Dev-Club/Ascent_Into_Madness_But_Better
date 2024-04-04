@@ -1,17 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4148r58j4iyi"]
+[gd_scene load_steps=5 format=3 uid="uid://b4148r58j4iyi"]
 
 [ext_resource type="Script" path="res://Scenes/buller.gd" id="1_ynr8y"]
 [ext_resource type="Texture2D" uid="uid://b3e5eanfh1hu1" path="res://Sprites/bullet-flight-animation-Sheet.png" id="2_ovu7q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ygloj"]
-radius = 3.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_gui1c"]
+radius = 4.0
 
-[node name="Sprite2D" type="Sprite2D"]
-texture = ExtResource("2_ovu7q")
-hframes = 3
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5xcn"]
+radius = 4.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ynr8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gui1c")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ygloj")
+shape = SubResource("CircleShape2D_i5xcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ovu7q")
+hframes = 3
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

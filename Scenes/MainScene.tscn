@@ -22,3 +22,15 @@ mesh = SubResource("BoxMesh_yp4be")
 position = Vector2(0.00163934, -0.00253808)
 scale = Vector2(0.999999, 1)
 shape = SubResource("RectangleShape2D_u2s2d")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(463, -124)
+scale = Vector2(991.25, 98.5)
+mesh = SubResource("BoxMesh_yp4be")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MeshInstance2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshInstance2D2/StaticBody2D"]
+position = Vector2(0.00163934, -0.00253808)
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_u2s2d")

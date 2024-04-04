@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4148r58j4iyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gui1c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5xcn"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gui1c")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_i5xcn")

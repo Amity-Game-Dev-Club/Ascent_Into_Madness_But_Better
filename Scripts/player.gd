@@ -17,16 +17,16 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("mouseL"):
 			var b = bullet.instantiate()
 			muzzle.add_child(b)
-			b.look_at(aimcast.get_collision_point())
-			b.shoot = true
-			
+			#b.look_at(aimcast.get_collision_point())
+			b.position = position
+			b.direction =(aimcast.target_position)
 	var direction = Input.get_axis("left", "right")
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if Input.is_action_just_pressed("jump") and doublejump > 0:
 			velocity.y = JUMP_VELOCITY
 			doublejump= doublejump - 1
-			
+		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -39,3 +39,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
+	
