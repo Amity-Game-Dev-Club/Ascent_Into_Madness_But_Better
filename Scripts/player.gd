@@ -6,8 +6,6 @@ var doublejump = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var aimcast = $"gun sprite/RayCast2D"
-@onready var muzzle = $"gun sprite/muzzle"
 @onready var bullet = preload("res://Scenes/buller.tscn")
 
 
