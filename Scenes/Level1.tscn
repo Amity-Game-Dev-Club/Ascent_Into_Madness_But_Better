@@ -52,45 +52,48 @@ sources/0 = SubResource("TileSetAtlasSource_aekq3")
 position = Vector2(94, 278)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enabled = true
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1479, -776)
+position = Vector2(-1456, -428)
+scale = Vector2(1.48, 1.48)
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture_filter = 1
-position = Vector2(653, 334)
-scale = Vector2(1.4, 1.4)
+position = Vector2(420.27, 47.2973)
+scale = Vector2(4.40541, 2.08108)
 texture = ExtResource("1_3pu7j")
 centered = false
 
 [node name="Bg1" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1479, -776)
-motion_mirroring = Vector2(280, 0)
+position = Vector2(-1456, -428)
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="GameBackgroundLayer3" type="Sprite2D" parent="ParallaxBackground/Bg1"]
-position = Vector2(653, 339)
-scale = Vector2(1.4, 1.4)
+position = Vector2(628, 244)
 texture = ExtResource("2_lopy5")
 centered = false
 
 [node name="Bg2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1479, -776)
-motion_mirroring = Vector2(300, 0)
+position = Vector2(-1456, -428)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(3000, 0)
 
 [node name="GameBackgroundLayer2" type="Sprite2D" parent="ParallaxBackground/Bg2"]
-position = Vector2(643, 339)
+position = Vector2(628, 77)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_40wtt")
 centered = false
 
 [node name="Bg3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-1479, -776)
-motion_mirroring = Vector2(320, 0)
+position = Vector2(-1456, -676)
+motion_mirroring = Vector2(3000, 0)
 
 [node name="GameBackgroundLayer1(front)" type="Sprite2D" parent="ParallaxBackground/Bg3"]
-position = Vector2(643, 334)
+position = Vector2(642, 400)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("4_fh7fx")
 centered = false
