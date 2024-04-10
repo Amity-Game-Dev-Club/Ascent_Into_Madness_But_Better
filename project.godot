@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ascent_Into_Madness"
-run/main_scene="res://Scenes/MainScene.tscn"
+run/main_scene="res://Scenes/Level1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

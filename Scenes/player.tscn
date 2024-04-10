@@ -7,23 +7,25 @@
 [ext_resource type="Script" path="res://Scenes/gun sprite.gd" id="4_ditx4"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="6_wlchm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs7ui"]
-size = Vector2(40, 53)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhi6g"]
+size = Vector2(22, 49)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_q885l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14, 16.5)
-shape = SubResource("RectangleShape2D_rs7ui")
+position = Vector2(15, 30.5)
+shape = SubResource("RectangleShape2D_jhi6g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(14, 16)
-scale = Vector2(2.8125, 1.84375)
+texture_filter = 1
+position = Vector2(14.25, 22.25)
+scale = Vector2(2.84375, 2.23438)
 texture = ExtResource("1_2v8d5")
 hframes = 3
 
 [node name="gun sprite" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(13, 16)
 scale = Vector2(1.57812, 2.03125)
 texture = ExtResource("3_8fg1f")
