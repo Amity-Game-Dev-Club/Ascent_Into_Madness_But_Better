@@ -53,4 +53,8 @@ script = ExtResource("3_typn8")
 position = Vector2(15.5, 31.5)
 shape = SubResource("RectangleShape2D_1g6d6")
 
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
