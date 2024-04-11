@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bow20ybjfelxy"]
+[gd_scene load_steps=15 format=3 uid="uid://bow20ybjfelxy"]
 
 [ext_resource type="Texture2D" uid="uid://bk1pg35eoj773" path="res://Sprites/coolwormdude-Sheet-export.png" id="1_56ctd"]
+[ext_resource type="Script" path="res://Scripts/worm.gd" id="1_dt6xq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0q8rl"]
 radius = 6.0
@@ -91,6 +92,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(0, -7)
+script = ExtResource("1_dt6xq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
 position = Vector2(0, 7)
