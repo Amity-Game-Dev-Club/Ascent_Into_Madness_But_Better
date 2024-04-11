@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bk1pg35eoj773" path="res://Sprites/coolwormdude-Sheet-export.png" id="1_56ctd"]
 [ext_resource type="Script" path="res://Scripts/worm.gd" id="1_dt6xq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0q8rl"]
-radius = 6.0
-height = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgac3"]
+size = Vector2(61, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibh7g"]
 atlas = ExtResource("1_56ctd")
@@ -90,16 +89,18 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 position = Vector2(0, -7)
 script = ExtResource("1_dt6xq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(0, 7)
-shape = SubResource("CapsuleShape2D_0q8rl")
+position = Vector2(-0.5, 11)
+shape = SubResource("RectangleShape2D_pgac3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 texture_filter = 1
+position = Vector2(-1, -24)
+scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vstrh")
 animation = &"rizzlerofoz"
 frame_progress = 0.372302
