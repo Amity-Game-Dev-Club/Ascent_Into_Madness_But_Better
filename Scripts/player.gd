@@ -30,3 +30,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 	
+
+func _on_area_2d_body_entered(body : Node2D):
+	if body.is_in_group("Enemy"):
+		print("Enemy Entered")
+		HealthManager.decrease_health(1)
+	pass # Replace with function body.

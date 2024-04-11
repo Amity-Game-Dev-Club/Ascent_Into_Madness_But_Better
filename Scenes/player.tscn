@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7v5gx2vyxdes"]
+[gd_scene load_steps=9 format=3 uid="uid://7v5gx2vyxdes"]
 
 [ext_resource type="Texture2D" uid="uid://bfvefjcmm3px4" path="res://Sprites/mainguy-Sheet.png" id="1_2v8d5"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_q885l"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhi6g"]
 size = Vector2(22, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73ca2"]
+size = Vector2(23, 46)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_q885l")
@@ -43,3 +46,11 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("3_typn8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14.5, 30)
+shape = SubResource("RectangleShape2D_73ca2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -18,3 +18,4 @@ func increase_health(health_amount : int):
 	
 	if current_health > max_health:
 		current_health = max_health
+
