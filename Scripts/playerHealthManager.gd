@@ -1,10 +1,7 @@
-extends Node
+
 
 var max_health : int = 3
 var current_health : int
-
-func _ready():
-	current_health = max_health
 
 
 func decrease_health(health_amount : int):

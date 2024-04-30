@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bow20ybjfelxy"]
+[gd_scene load_steps=16 format=3 uid="uid://bow20ybjfelxy"]
 
 [ext_resource type="Texture2D" uid="uid://bk1pg35eoj773" path="res://Sprites/coolwormdude-Sheet-export.png" id="1_56ctd"]
 [ext_resource type="Script" path="res://Scripts/worm.gd" id="1_dt6xq"]
@@ -89,6 +89,9 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6p3"]
+size = Vector2(62, 31)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
 position = Vector2(0, -7)
 script = ExtResource("1_dt6xq")
@@ -104,3 +107,9 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vstrh")
 animation = &"rizzlerofoz"
 frame_progress = 0.372302
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 10.5)
+shape = SubResource("RectangleShape2D_wn6p3")

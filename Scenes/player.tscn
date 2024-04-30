@@ -47,14 +47,16 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("3_typn8")
 
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = 56.0
+offset_top = 54.0
+offset_right = 96.0
+offset_bottom = 77.0
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(15.5, 31.5)
 shape = SubResource("RectangleShape2D_1g6d6")
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
