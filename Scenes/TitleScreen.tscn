@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds5ieo2phhgyu"]
+[gd_scene load_steps=6 format=3 uid="uid://ds5ieo2phhgyu"]
 
+[ext_resource type="Script" path="res://Scripts/TitleManager.gd" id="1_a6kex"]
 [ext_resource type="Texture2D" uid="uid://dduxvc78hpg2j" path="res://Sprites/start button-Recovered-Recovered-Recovered.png" id="1_fu0fx"]
 [ext_resource type="Texture2D" uid="uid://c2i3j7gyoptg2" path="res://Sprites/quit buton-Recovered-Recovered.png" id="2_01eby"]
 [ext_resource type="Texture2D" uid="uid://b3f4nt436y672" path="res://Sprites/title yippee-Recovered-Recovered-Recovered-Recovered-Recovered.png" id="3_vpi2d"]
+[ext_resource type="AudioStream" uid="uid://e2rh2muir1f6" path="res://Music/Spoopy Hybrid.mp3" id="4_n5k4m"]
 
 [node name="TitleScreen" type="Node2D"]
 
@@ -12,20 +14,43 @@ offset_bottom = 40.0
 scale = Vector2(28.9849, 16.1673)
 color = Color(0, 0, 0, 1)
 
-[node name="StartButton-recovered-recovered-recovered" type="Sprite2D" parent="."]
+[node name="Button" type="Button" parent="."]
 texture_filter = 1
-position = Vector2(601, 438)
-scale = Vector2(7.54396, 7.8376)
+offset_left = 475.0
+offset_top = 382.0
+offset_right = 735.0
+offset_bottom = 462.0
+scale = Vector2(1, 1.16)
+script = ExtResource("1_a6kex")
+
+[node name="StartButton-recovered-recovered-recovered" type="Sprite2D" parent="Button"]
+position = Vector2(128, 39.6552)
+scale = Vector2(6.50864, 5.20454)
 texture = ExtResource("1_fu0fx")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 449.0
+offset_top = 499.0
+offset_right = 457.0
+offset_bottom = 507.0
+scale = Vector2(39.3489, 14.5499)
+script = ExtResource("1_a6kex")
+
+[node name="TitleYippee-recovered-recovered-recovered-recovered-recovered" type="Sprite2D" parent="Button2"]
+texture_filter = 1
+position = Vector2(3.5325, -19.8626)
+scale = Vector2(0.211939, 0.487022)
+texture = ExtResource("3_vpi2d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n5k4m")
+autoplay = true
 
 [node name="QuitButon-recovered-recovered" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(601, 561)
+position = Vector2(603, 555)
 scale = Vector2(8.96, 6.8)
 texture = ExtResource("2_01eby")
 
-[node name="TitleYippee-recovered-recovered-recovered-recovered-recovered" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(588, 210)
-scale = Vector2(8.33957, 7.08615)
-texture = ExtResource("3_vpi2d")
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed2"]
