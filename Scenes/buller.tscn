@@ -14,7 +14,7 @@ texture_filter = 1
 texture = ExtResource("2_ovu7q")
 hframes = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Bullet"]]
 shape = SubResource("CircleShape2D_utqjn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
