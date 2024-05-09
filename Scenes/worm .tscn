@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/worm.gd" id="1_dt6xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgac3"]
-size = Vector2(61, 28)
+size = Vector2(58, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7cqyk"]
 atlas = ExtResource("1_56ctd")
@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="Animation" id="Animation_4luq3"]
@@ -93,24 +93,24 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wn6p3"]
-size = Vector2(62, 29)
+size = Vector2(62, 38)
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(575, 308)
 script = ExtResource("1_dt6xq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(-0.5, 11)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 29)
 shape = SubResource("RectangleShape2D_pgac3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_vstrh")
 autoplay = "default"
-frame = 6
-frame_progress = 0.544727
+frame = 5
+frame_progress = 0.542857
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
@@ -120,7 +120,7 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 32.5)
+position = Vector2(-1, 29)
 shape = SubResource("RectangleShape2D_wn6p3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

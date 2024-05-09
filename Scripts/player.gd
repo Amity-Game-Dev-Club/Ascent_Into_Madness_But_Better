@@ -3,7 +3,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var doublejump = 1
 var max_health : int = 3
-var current_health : int
+var current_health : int = 3
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var bullet = preload("res://Scenes/buller.tscn")
@@ -23,8 +23,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		velocity.x = direction * SPEED * 1.2
 		doublejump = 1 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	if direction:
 		velocity.x = direction * SPEED
 	else:
