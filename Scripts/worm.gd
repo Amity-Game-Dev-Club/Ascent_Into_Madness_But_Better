@@ -10,6 +10,8 @@ func decrease_health(health_amount : int):
 	if current_health < 0:
 		current_health = 0    # make sure that this works
 		print("Enemy Dies")
+		queue_free()
+		
 
 func increase_health(health_amount : int):
 	current_health += health_amount

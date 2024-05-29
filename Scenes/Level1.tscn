@@ -112,5 +112,5 @@ layer_1/tile_data = PackedInt32Array(458754, 0, 0, 524290, 131072, 0, 589826, 0,
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_ihso2")]
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("7_6upn7")]
+[node name="worm" parent="." groups=["Enemy"] instance=ExtResource("7_6upn7")]
 position = Vector2(-126, 106)

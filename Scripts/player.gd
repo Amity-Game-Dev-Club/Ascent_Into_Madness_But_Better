@@ -8,9 +8,8 @@ var current_health : int = 3
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var bullet = preload("res://Scenes/buller.tscn")
 func _ready():
-	var thuggers = $Label
+	pass
 func _physics_process(delta: float) -> void:
-	#print($Camera2D/Label.text("sigma"))
 	var direction = Input.get_axis("left", "right")
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -21,12 +20,12 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		velocity.x = direction * SPEED * 1.2
+		velocity.x = direction * SPEED * 19
 		doublejump = 1 
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x/10, 0, SPEED)
 	move_and_slide()
 	
 

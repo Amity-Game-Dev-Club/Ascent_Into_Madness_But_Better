@@ -19,7 +19,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(crosshair_texture)
 	ammo_in_magazine = magazine_size
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	if Input.is_action_just_pressed("reload"):
