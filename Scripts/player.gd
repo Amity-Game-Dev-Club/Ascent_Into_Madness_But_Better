@@ -4,6 +4,7 @@ const JUMP_VELOCITY = -400.0
 var doublejump = 1
 var max_health : int = 3
 var current_health : int = 3
+var direction :float = 0
 @onready var animation = $AnimatedSprite2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,22 +14,21 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("right"):
 		animation.play("Run")
-	var direction = Input.get_axis("left", "right")
+	direction = lerp(direction, Input.get_axis("left", "right"), delta * 10)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if Input.is_action_just_pressed("jump") and doublejump > 0:
 			velocity.y = JUMP_VELOCITY
-			doublejump= doublejump - 1
+			doublejump = doublejump - 1
 		
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		velocity.x = direction * SPEED * 19
 		doublejump = 1 
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x =  direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x/10, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 	move_and_slide()
 	
 
